@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  tezos-interaction:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "5678:5678"
+    command: ["python", "register_transaction_v2.py"]
